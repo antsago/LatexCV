@@ -1,7 +1,5 @@
-
 %Class to control the look and feel of the Curriculum Vitae
 %Copyright 2013 Antonio Sanchez Gomez
-%
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{CurriculumVitae}
@@ -15,7 +13,7 @@
 \RequirePackage[utf8]{inputenc} %Use full unicode specification
 \RequirePackage{titlesec} %modify section command
 \RequirePackage[usenames,dvipsnames]{xcolor}%to define new colors
-\RequirePackage[tmargin=1.5cm,bmargin=1cm,rmargin=2cm,lmargin=2cm]{geometry}%resize margins
+\RequirePackage[tmargin=2.5 cm,bmargin=2.5 cm,rmargin=2.5cm,lmargin=2.5cm]{geometry}%resize margins
 \RequirePackage{enumitem}%control space in list
 
 %Change color of links
@@ -23,7 +21,7 @@
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 
 %Change spacing of enumerates
-\setlist{nosep}
+%\setlist{nosep}
 
 
 %Put contact details
@@ -31,57 +29,50 @@
 \newcommand{\email}[1]{\newcommand{\@email}{\href{mailto:#1}{#1}}}
 \newcommand{\address}[1]{\newcommand{\@address}{#1}}
 \newcommand{\phone}[1]{\newcommand{\@phone}{#1}}
-\newcommand{\githubaccount}[1]{\newcommand{\@github}{github: \href{https://github.com/#1}{github.com/#1}}}
+\newcommand{\githubaccount}[1]{\newcommand{\@github}{Github: \href{https://github.com/#1}{github.com/#1}}}
+\newcommand{\linkedin}[1]{\newcommand{\@linkedin}{LinkedIn: \href{https://www.linkedin.com/in/#1}{linkedin.com/in/#1}}}
 
 %Write the headings (name + contact details)
 \newcommand{\makeheading}
 {
-  \centerline{\Huge\bf\em{\@name}}%name, big and centered
+  %name, big and centered
+  \centerline{\Huge\bf\em{\@name}}
   %contact details separated with a big dot
-  \centerline{\footnotesize\@address \ $\bullet$\  \@phone}
-  \centerline{\footnotesize\@email \  $\bullet$ \ \@github}
+  \centerline{\footnotesize\@linkedin \  $\bullet$ \ \@github}
+  \centerline{\footnotesize\@email \ $\bullet$\  \@phone}
+
 }
 
 %Redefine section command
-\titleformat{\section}{\Large\scshape\raggedright}
-{}{0em}{}
-[\titlerule]
+\titleformat{\section}[hang]{ \vspace{-2mm}\Large\scshape\raggedright}{}{0pt}{}[\titlerule]
 
 
-%\workexp{posit title}{from-to}{place}{description}
-\newcommand{\workexp}[4]
-{\noindent \textbf{#1} at #3 \hfill \textbf{\em#2}\\
- {\footnotesize#4}\vspace{3mm}}
+%work experience {posit title}{from-to}{company}{city}{country}{description}
+\newcommand{\workexp}[6]
+{\noindent
+   \textbf{#1}, \emph{#3}, #4, #5 \hfill \textbf{\em#2}
 
-%\educ{diploma}{from-to}{institution}{city}{country}{marks}
-%{description}
-\newcommand{\educ}[7]
-{\noindent \textbf{#1} \hfill \textbf{\em#2}\\
- {\small \emph{#3}, #4, #5\\ #6\\}
- {\footnotesize#7}\vspace{3mm}}
-
-%Specify the contents of the covering letter
-\newcommand{\coveringletter}[1]{\newcommand{\@coveringletter}{#1}}
-\newcommand{\position}[1]{\newcommand{\@position}{#1}}
-
-%Write the covering letter
-\newcommand{\writecl}{
-  {\noindent
-   Finisterre 5, 2º1,\\
-   28029, Madrid\\
-   Spain\\
-   \vspace{10mm}}
-   
-   Dear Sir/Madam:\\\vspace{3mm}
-  \centerline{\textbf{\large \@position}}
-  \@coveringletter\vspace{10mm}\\
-  Yours faithfully,\\
-  Antonio Sanchez Gomez
-  
-  \newpage
+   {\small 
+     \begin{itemize}
+        #6
+      \end{itemize}
+   }
+   \vspace{2mm}
 }
 
+%\educ{diploma}{from-to}{institution}{city}{country}{marks}{description}
+\newcommand{\educ}[7]
+{\noindent
+   \textbf{#1} \hfill \textbf{\em#2}
 
-
-
-
+   {\emph{#3}, #4, #5}
+   
+   {#6}
+   
+   {\small 
+     \begin{itemize}
+       #7
+    \end{itemize}
+    }
+    \vspace{2mm}
+}
