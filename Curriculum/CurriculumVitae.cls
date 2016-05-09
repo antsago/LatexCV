@@ -37,20 +37,22 @@
 {
   %name, big and centered
   \centerline{\Huge\bf\em{\@name}}
+  \vspace{1.5mm}
+
   %contact details separated with a big dot
-  \centerline{\footnotesize\@linkedin \  $\bullet$ \ \@github}
-  \centerline{\footnotesize\@email \ $\bullet$\  \@phone}
+  \centerline{\@linkedin \  $\bullet$ \ \@github}
+  \centerline{\@email \ $\bullet$\  \@phone}
 
 }
 
 %Redefine section command
-\titleformat{\section}[hang]{ \vspace{-2mm}\Large\scshape\raggedright}{}{0pt}{}[\titlerule]
+\titleformat{\section}[hang]{\Large\scshape\raggedright}{}{0pt}{}[\titlerule]
 
 
 %work experience {posit title}{from-to}{company}{city}{country}{description}
 \newcommand{\workexp}[6]
-{\noindent
-   \textbf{#1}, \emph{#3}, #4, #5 \hfill \textbf{\em#2}
+{
+   \noindent \textbf{#1}, \emph{#3}, #4, #5 \hfill \textbf{\em#2}
 
    {\small 
      \begin{itemize}
@@ -62,12 +64,12 @@
 
 %\educ{diploma}{from-to}{institution}{city}{country}{marks}{description}
 \newcommand{\educ}[7]
-{\noindent
-   \textbf{#1} \hfill \textbf{\em#2}
+{
+   \noindent \textbf{#1} \hfill \textbf{\em#2}
 
-   {\emph{#3}, #4, #5}
+   {\noindent \emph{#3}, #4, #5}
    
-   {#6}
+   {\noindent #6}
    
    {\small 
      \begin{itemize}
