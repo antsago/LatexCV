@@ -3,7 +3,10 @@
 #Script to create the compile Curriculum.pdf. 
 # It requires docker and an standard bash command line
 
-imageId=`docker build . | tail -n1|cut -d" " -f3` &&
-docker run $imageId &&
-contId=`docker ps -a | head -n2 | tail -n1 | cut -d" " -f1` &&
-docker cp $contId:/src/Curriculum.pdf ./Curriculum.pdf
+imageName='latex_cv'
+containerName='latex_cv_container'
+docker build -t $imageName . &&
+docker run --name $containerName $imageName &&
+docker cp $containerName:/src/Curriculum.pdf ./Curriculum.pdf
+docker rm $containerName
+docker rmi $imageName
