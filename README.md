@@ -1,8 +1,21 @@
 # LatexCV
 
-A professional-looking curriculum using Latex and Docker and version-controlled with git. You can see it in action [here](./src/Curriculum.pdf). 
+A Latex class to generate a professional-looking curriculum. You can see it in action [here](./src/Curriculum.pdf).
 
 ## Usage
+
+### Prerequisites
+- **Docker**: for ease of installation and development.
+- **Git**: version control is a good practice even outside of development.
+
+### Customization
+
+Unless you are looking to impersonate me, you will probably want to update the CV to reflect your career and skills. Fortunately you can use this class without being familiar with Latex. Just open `./src/Curriculum.tex` on your favourite text editor and you will find it is mostly a matter of replacing my details with yours and mimicking existing sections to obtain the curriculum you are looking for.
+
+Nonetheless, if you want a more detailed description of the custom commands the latex class introduces, head over to [Commands reference](#commands-reference)
+
+
+### Compilation
 
 The project uses Docker to avoid having to install all the quite-sizable dependencies everytime the curriculum needs to be updated. It also introduces a docker-compose file to declare the configuration of the container in a readable configuration:
   - If you have Docker Engine and Docker Compose you only need to do:
@@ -17,24 +30,20 @@ The project uses Docker to avoid having to install all the quite-sizable depende
 After running either command at the root of the project you will find your recompiled CV at `./src/Curriculum.pdf`
 
 
-## Customizing the CV
+## Commands reference
 
-To use <project_name>, follow these steps:
+`./src/Curriculum.cls` introduces 4 commands that make up the core of the curriculum:
+  - `\makeheading`: which creates the header that lists your contact details. These details need to be provided before the command with:
+    - `\name{Your name}`
+    - `\phone{(+11) 123 456 789}`
+    - `\email{hi@me.com}`
+    - `\githubaccount{username}` (the class will create the link for you, you just need to specify your username)
+    - `\linkedin{username}` (the class will create the shortened link for you, you just need to specify your username)
+  - `\section{title}{content}`: which marks a section of the CV, Latex will do its best so that any given section does not spill over between different pages.
+  - `\workexp{position-title}{from-to}{company}{city}{country}{description bullet points}`: used to show a work position or experience. The content is with bullet points, each bullet point needs to be prefaced with `\item`
+  - `\educ{diploma-name}{from-to}{institution}{city}{country}{marks}{description}`: similar to `\workexp` but with a format more suited for education entries.
 
-```
-<usage_example>
-```
+Feel free to modify or take inspiration from them to suit your needs.
 
-Add run commands and examples you think users will find useful. Provide an options reference for bonus points!
-
-## Contributing to <project_name>
-<!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
-To contribute to <project_name>, follow these steps:
-
-1. Fork this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Make your changes and commit them: `git commit -m '<commit_message>'`
-4. Push to the original branch: `git push origin <project_name>/<location>`
-5. Create the pull request.
-
-Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+## Contact
+If you found this repository useful and want to contact me, you can reach me at [sago.ant@gmail.com](mailto:sago.ant@gmail.com). Alternatively, if you have some an idea and want to see it here I am happy to accept [pull requests](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
