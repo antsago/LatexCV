@@ -8,3 +8,4 @@ services:
       - ./src:/data
     ports:
       - "27017:27017"
+    network_mode: bridge
