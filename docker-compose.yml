@@ -5,6 +5,6 @@ services:
     image: blang/latex:ubuntu
     command: "pdflatex Curriculum.tex"
     volumes:
-      - ./Curriculum:/data
+      - ./src:/data
     ports:
       - "27017:27017"
