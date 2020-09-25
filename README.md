@@ -34,7 +34,7 @@ After running either command at the root of the project you will find your recom
 
 `./src/Curriculum.cls` introduces 4 commands that make up the core of the curriculum:
   - `\makeheading`: which creates the header that lists your contact details. These details need to be provided before the command with:
-    - `\name{Your name}`
+    - `\name{your-name}`
     - `\phone{(+11) 123 456 789}`
     - `\email{hi@me.com}`
     - `\githubaccount{username}` (the class will create the link for you, you just need to specify your username)
