@@ -6,7 +6,7 @@ A Latex class to generate a professional-looking curriculum. You can see it in a
 
 ### Prerequisites
 - **Docker**: for ease of installation and development.
-- **Git**: version control is a good practice even outside of development.
+- **Git**: version control is a good practice even outside of pure code development.
 
 ### Customization
 
