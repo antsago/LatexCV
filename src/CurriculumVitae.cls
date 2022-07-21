@@ -40,8 +40,8 @@
   \vspace{1.5mm}
 
   %contact details separated with a big dot
-  \centerline{\@linkedin \  $\bullet$ \ \@github}
   \centerline{\@email \ $\bullet$\  \@phone}
+  \centerline{\@linkedin}
 
 }
 
@@ -65,15 +65,13 @@
 %\educ{diploma}{from-to}{institution}{city}{country}{marks}{description}
 \newcommand{\educ}[7]
 {
-   \noindent \textbf{#1} \hfill \textbf{\em#2}
+   \noindent \textbf{#1} \emph{(#2)}
 
    {\noindent \emph{#3}, #4, #5}
    
-   {\noindent #6}
-   
    {\small 
      \begin{itemize}
-       #7
+       #6
     \end{itemize}
     }
     \vspace{2mm}
