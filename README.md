@@ -20,7 +20,7 @@ Nonetheless, if you want a more detailed description of the custom commands the 
 The project uses Docker to avoid having to install all the quite-sizable dependencies everytime the curriculum needs to be updated. It also introduces a docker-compose file to declare the configuration of the container in a readable configuration:
   - If you have Docker Engine and Docker Compose you only need to do:
     ```
-    docker-compose run --rm latex
+    docker compose run --rm latex
     ```
   - If you only have Docker Engine you can still do:
     ```

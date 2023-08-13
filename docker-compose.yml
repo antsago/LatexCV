@@ -1,4 +1,3 @@
-version: '3'
 services:
   latex:
     container_name: latex
@@ -6,6 +5,3 @@ services:
     command: "pdflatex Curriculum.tex"
     volumes:
       - ./src:/data
-    ports:
-      - "27017:27017"
-    network_mode: bridge
