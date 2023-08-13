@@ -15,6 +15,7 @@
 \RequirePackage[usenames,dvipsnames]{xcolor}%to define new colors
 \RequirePackage[tmargin=2.5 cm,bmargin=2.5 cm,rmargin=2.5cm,lmargin=2.5cm]{geometry}%resize margins
 \RequirePackage{enumitem}%control space in list
+\RequirePackage{ifmtarg}%check for empty args
 
 %Change color of links
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
@@ -52,14 +53,16 @@
 %work experience {posit title}{from-to}{company}{city}{country}{description}
 \newcommand{\workexp}[6]
 {
-   \noindent \textbf{#1}, \emph{#3}, #4, #5 \hfill \textbf{\em#2}
+  \noindent \textbf{#1}, \emph{#3}, #4, #5 \hfill \textbf{\em#2}
 
-   {\small 
-     \begin{itemize}
-        #6
-      \end{itemize}
-   }
-   \vspace{2mm}
+  \@ifnotmtarg{#6}
+  {\small 
+    \begin{itemize}
+      #6
+    \end{itemize}
+  }
+
+  \vspace{2mm}
 }
 
 %\educ{diploma}{from-to}{institution}{city}{country}{marks}{description}
