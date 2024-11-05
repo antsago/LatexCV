@@ -10,9 +10,7 @@ The easiest way to use the repository's devcontainer (which requires Docker and 
 
 ### Customization
 
-Unless you are looking to impersonate me, you will probably want to update the CV to reflect your career and skills. Fortunately you can use this class without being familiar with Latex. Just open `./src/Curriculum.tex` on your favourite text editor and replace the contents. You can also mimick the existing sections to obtain the curriculum you are looking for.
-
-Nonetheless, if you want a more detailed description of the custom commands the latex class introduces, head over to [Commands reference](#commands-reference)
+Unless you are looking to impersonate me, you will probably want to update the CV to reflect your career and skills. Fortunately you can use this class without being familiar with Latex. Just open `./src/Curriculum.tex` on your favourite text editor and replace the contents.
 
 ## Commands reference
 
