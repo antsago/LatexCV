@@ -18,12 +18,8 @@
 \RequirePackage{ifmtarg}%check for empty args
 
 %Change color of links
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\definecolor{linkcolour}{rgb}{0.12,0.23,0.54}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-
-%Change spacing of enumerates
-%\setlist{nosep}
-
 
 %Put contact details
 \newcommand{\name}[1]{\newcommand{\@name}{#1}}
