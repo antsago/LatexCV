@@ -1,34 +1,18 @@
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Container&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/antsago/LatexCV)
+
 # LatexCV
 
 A Latex class to generate a professional-looking curriculum. You can see it in action [here](./src/Curriculum.pdf).
 
 ## Usage
 
-### Prerequisites
-- **Docker**: for ease of installation and development.
-- **Git**: version control is a good practice even outside of pure code development.
+The easiest way to use the repository's devcontainer (which requires Docker and vscode). Opening the repository in vscode should prompt you to access it, but click on the tag above if not. Once in the repo, navigate to the `./src` folder and execute the command `pdflatex Curriculum.tex`. The compiled pdf should be in `./src/Curriculum.pdf`
 
 ### Customization
 
-Unless you are looking to impersonate me, you will probably want to update the CV to reflect your career and skills. Fortunately you can use this class without being familiar with Latex. Just open `./src/Curriculum.tex` on your favourite text editor and you will find it is mostly a matter of replacing my details with yours and mimicking existing sections to obtain the curriculum you are looking for.
+Unless you are looking to impersonate me, you will probably want to update the CV to reflect your career and skills. Fortunately you can use this class without being familiar with Latex. Just open `./src/Curriculum.tex` on your favourite text editor and replace the contents. You can also mimick the existing sections to obtain the curriculum you are looking for.
 
 Nonetheless, if you want a more detailed description of the custom commands the latex class introduces, head over to [Commands reference](#commands-reference)
-
-
-### Compilation
-
-The project uses Docker to avoid having to install all the quite-sizable dependencies everytime the curriculum needs to be updated. It also introduces a docker-compose file to declare the configuration of the container in a readable configuration:
-  - If you have Docker Engine and Docker Compose you only need to do:
-    ```
-    docker compose run --rm latex
-    ```
-  - If you only have Docker Engine you can still do:
-    ```
-    docker run --rm -i --net=none -v $PWD/src:/data blang/latex:ubuntu pdflatex Curriculum.tex 
-    ```
-
-After running either command at the root of the project you will find your recompiled CV at `./src/Curriculum.pdf`
-
 
 ## Commands reference
 
