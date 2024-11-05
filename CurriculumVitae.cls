@@ -43,7 +43,7 @@
   %contact details separated with a big dot
   \centerline{\footnotesize \@github \ $\bullet$ \@linkedin}
   % \centerline{\@email \ $\bullet$\  \@phone}
-  \vspace{1.5mm}
+  \vspace{3.5mm}
 
 }
 
