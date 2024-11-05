@@ -30,8 +30,8 @@
 \newcommand{\email}[1]{\newcommand{\@email}{\href{mailto:#1}{#1}}}
 \newcommand{\address}[1]{\newcommand{\@address}{#1}}
 \newcommand{\phone}[1]{\newcommand{\@phone}{#1}}
-\newcommand{\githubaccount}[1]{\newcommand{\@github}{Github: \href{https://github.com/#1}{github.com/#1}}}
-\newcommand{\linkedin}[1]{\newcommand{\@linkedin}{LinkedIn: \href{https://www.linkedin.com/in/#1}{linkedin.com/in/#1}}}
+\newcommand{\githubaccount}[1]{\newcommand{\@github}{\href{https://github.com/#1}{github.com/#1}}}
+\newcommand{\linkedin}[1]{\newcommand{\@linkedin}{\href{https://www.linkedin.com/in/#1}{linkedin.com/in/#1}}}
 
 %Write the headings (name + contact details)
 \newcommand{\makeheading}
@@ -41,8 +41,9 @@
   \vspace{1.5mm}
 
   %contact details separated with a big dot
-  \centerline{\@linkedin \  $\bullet$ \ \@github}
-  \centerline{\@email \ $\bullet$\  \@phone}
+  \centerline{\footnotesize \@github \ $\bullet$ \@linkedin}
+  % \centerline{\@email \ $\bullet$\  \@phone}
+  \vspace{1.5mm}
 
 }
 
