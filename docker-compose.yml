@@ -1,7 +1,0 @@
-services:
-  latex:
-    container_name: latex
-    image: blang/latex:ubuntu
-    command: "pdflatex Curriculum.tex"
-    volumes:
-      - ./src:/data
