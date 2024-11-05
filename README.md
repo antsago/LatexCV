@@ -2,19 +2,19 @@
 
 # LatexCV
 
-A Latex class to generate a professional-looking curriculum. You can see it in action [here](./src/Curriculum.pdf).
+A Latex class to generate a professional-looking curriculum. You can see it in action [here](./Curriculum.pdf).
 
 ## Usage
 
-The easiest way to use the repository's devcontainer (which requires Docker and vscode). Opening the repository in vscode should prompt you to access it, but click on the tag above if not. Once in the repo, navigate to the `./src` folder and execute the command `pdflatex Curriculum.tex`. The compiled pdf should be in `./src/Curriculum.pdf`
+The easiest way to use the repository's devcontainer (which requires Docker and vscode). Opening the repository in vscode should prompt you to access it, but click on the tag above if not. Once in the repo, execute the command `pdflatex Curriculum.tex`. The compiled pdf should be in `./Curriculum.pdf`
 
 ### Customization
 
-Unless you are looking to impersonate me, you will probably want to update the CV to reflect your career and skills. Fortunately you can use this class without being familiar with Latex. Just open `./src/Curriculum.tex` on your favourite text editor and replace the contents.
+Unless you are looking to impersonate me, you will probably want to update the CV to reflect your career and skills. Fortunately you can use this class without being familiar with Latex. Just open `./Curriculum.tex` on your favourite text editor and replace the contents.
 
 ## Commands reference
 
-`./src/Curriculum.cls` introduces 4 commands that make up the core of the curriculum:
+`./Curriculum.cls` introduces 4 commands that make up the core of the curriculum:
   - `\makeheading`: which creates the header that lists your contact details. These details need to be provided before the command with:
     - `\name{your-name}`
     - `\phone{(+11) 123 456 789}`
